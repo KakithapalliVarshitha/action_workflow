@@ -1,0 +1,16 @@
+name: Install Python and Node JS
+description: Composite action to install Python and Node.js runtimes
+
+runs:
+  using: "composite"
+
+steps:
+  - name: Set up Python
+    uses: actions/setup-python@v2
+    with:
+      python-version: '3.x'
+
+  - name: Set up Node JS
+    uses: actions/setup-node@v4
+    with:
+      node-version: '24.x'
