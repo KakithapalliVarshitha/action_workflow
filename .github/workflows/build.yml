@@ -1,0 +1,20 @@
+name: Sample Workflow Using Reusable Action
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Runtimes
+        uses: ./.github/actions/setup-runtime
+
+      - name: Verify Versions
+        run: |
+          node -v
+          python --version
